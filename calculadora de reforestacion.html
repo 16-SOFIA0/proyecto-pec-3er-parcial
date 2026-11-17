@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Reforestación</title>
+</head>
+<body>
+   <?php
+    if ($_POST) {
+        $area = $_POST['area'];
+        $density = $_POST['density'];
+        $trees = $area * $density;
+        echo "<p>La cantidad de árboles necesarios es: $trees</p>";
+    }
+   ?>
+
+    <form method="post">
+        <label for="area">Área a reforestar (en hectáreas):</label>
+        <input type="number" id="area" name="area" required><br><br>
+
+        <label for="density">Densidad de árboles por hectárea:</label>
+        <input type="number" id="density" name="density" required><br><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
